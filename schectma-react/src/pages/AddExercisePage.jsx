@@ -29,6 +29,8 @@ export const AddExercisePage = () => {
         );
         console.log("Response status:", response.status);
         if (response.status == 200 || response.status == 201){
+            const data = await response.json();
+            console.log("Created exercise:", data);
             alert("successfully added exercise")
             navigate('/');
         } else {
