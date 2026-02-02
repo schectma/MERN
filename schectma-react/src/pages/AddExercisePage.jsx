@@ -27,9 +27,10 @@ export const AddExercisePage = () => {
                 body: JSON.stringify(newExercise)
             }
         );
+        console.log("Response status:", response.status);
         if (response.status == 201){
             alert("successfully added exercise")
-            // reload or navigate
+            navigate('/');
         } else {
             alert(`failed to add exercise, status code ${response.status}`)
         }
