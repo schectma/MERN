@@ -18,7 +18,7 @@ export const AddExercisePage = () => {
             reps: parseInt(reps) || 0, 
             weight: parseFloat(weight) || 0, 
             unit, 
-            date
+            date: date.split('-').slice(1).join('-').replace(/(\d{4})$/, (y) => y.slice(2))
         };
         const response = await fetch(
             '/exercises', {
@@ -27,14 +27,12 @@ export const AddExercisePage = () => {
                 body: JSON.stringify(newExercise)
             }
         );
-        try{if (response.status == 201){
+        if (response.status == 201){
             alert("successfully added exercise")
+            // reload or navigate
         } else {
-            alert("failed to add exercise, status code " + response.status)
-        }} catch {
-            console.log("caught");
+            alert(`failed to add exercise, status code ${response.status}`)
         }
-        navigate('/');
     };
 
     return (
