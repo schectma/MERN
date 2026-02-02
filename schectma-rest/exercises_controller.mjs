@@ -42,13 +42,6 @@ function validateInput(n,r,w,u,d){
 // 1. POST created exercise
 app.post('/exercises', asyncHandler(async (req, res) => {
     // Validate request body: check for missing or invalid input.
-    console.log("POST /exercises received:", req.body);
-    console.log("name:", req.body.name, "length:", req.body.name?.length);
-    console.log("reps:", req.body.reps, "type:", typeof req.body.reps);
-    console.log("weight:", req.body.weight, "type:", typeof req.body.weight);
-    console.log("unit:", req.body.unit);
-    console.log("date:", req.body.date, "valid:", isDateValid(req.body.date));
-    
     if (
         !req.body.name || req.body.name.length == 0 ||
         !req.body.reps || req.body.reps <= 0 ||
