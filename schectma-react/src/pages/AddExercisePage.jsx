@@ -18,7 +18,7 @@ export const AddExercisePage = () => {
             reps: parseInt(reps) || 0, 
             weight: parseFloat(weight) || 0, 
             unit, 
-            date: date.split('-').slice(1).join('-').replace(/(\d{4})$/, (y) => y.slice(2))
+            date
         };
         const response = await fetch(
             '/exercises', {
