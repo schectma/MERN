@@ -14,7 +14,7 @@ export const EditExercisePage = ({exerciseToEdit}) => {
     const editExercise = async () => {
         const editedExercise = {name, reps, weight, unit, date};
         const response = await fetch(
-            `/exercises/${exerciseToEdit._id}`, {
+            `${import.meta.env.VITE_API_URL}/exercises/${exerciseToEdit._id}`, {
                 method: "PUT",
                 headers: {'Content-type':'application/json'},
                 body: JSON.stringify(editedExercise)

@@ -20,21 +20,26 @@ export const AddExercisePage = () => {
             unit, 
             date
         };
-        const response = await fetch(
-            '/exercises', {
-                method: "POST",
-                headers: {'Content-type':'application/json'},
-                body: JSON.stringify(newExercise)
+        try {
+            const response = await fetch(
+                `${import.meta.env.VITE_API_URL}/exercises`, {
+                    method: "POST",
+                    headers: {'Content-type':'application/json'},
+                    body: JSON.stringify(newExercise)
+                }
+            );
+            console.log("Response status:", response.status);
+            if (response.status == 200 || response.status == 201){
+                const data = await response.json();
+                console.log("Created exercise:", data);
+                alert("successfully added exercise")
+                navigate('/');
+            } else {
+                alert(`failed to add exercise, status code ${response.status}`)
             }
-        );
-        console.log("Response status:", response.status);
-        if (response.status == 200 || response.status == 201){
-            const data = await response.json();
-            console.log("Created exercise:", data);
-            alert("successfully added exercise")
-            navigate('/');
-        } else {
-            alert(`failed to add exercise, status code ${response.status}`)
+        } catch (error) {
+            console.error("Fetch error:", error);
+            alert("Error adding exercise: " + error.message);
         }
     };
 

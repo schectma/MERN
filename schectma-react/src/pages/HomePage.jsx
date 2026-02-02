@@ -7,7 +7,7 @@ export const HomePage = ({ setExerciseToEdit }) => {
     const navigate = useNavigate();
 
     const loadExercises = async () => {
-        const response = await fetch('/exercises');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/exercises`);
         const data = await response.json();
         setExercises(data);
     };
