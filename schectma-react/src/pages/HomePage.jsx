@@ -18,7 +18,7 @@ export const HomePage = ({ setExerciseToEdit }) => {
 
     const onDelete = async(_id)=>{
         const response = await fetch(
-            `/exercises/${_id}`,
+            `${import.meta.env.VITE_API_URL}/exercises/${_id}`,
             {method: 'DELETE'}
         );
         if (response.status == 204){
