@@ -35,11 +35,11 @@ export const HomePage = ({ setExerciseToEdit }) => {
     };
 
     return (
-        <>
-            <h2>Exercise Logger</h2>
+        <section className="home-page">
+            <h2 className="home-title">Exercise Logger</h2>
             <ExerciseCollection exercises={exercises} onDelete={onDelete} onEdit={onEdit}></ExerciseCollection>
-            <Link to="/add-exercise">Add an exercise</Link>
-        </>
+            <Link className="home-add-link" to="/add-exercise">Add an exercise</Link>
+        </section>
     );
 };
 
