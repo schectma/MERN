@@ -1,6 +1,6 @@
 ## Exercise Logger
 
-Exercise Logger is a simple [MERN stack](https://www.mongodb.com/resources/languages/mern-stack?msockid=180ff8ba597364c73306ef8f582a656c) web app for tracking exercise sets. It lets users create, view, edit, and delete exercises from a clean browser-based interface backed by a REST API and MongoDB.
+Exercise Logger is a simple [MERN stack](https://www.mongodb.com/resources/languages/mern-stack?msockid=180ff8ba597364c73306ef8f582a656c) web app for tracking exercise sets.
 
 ## Overview
 
