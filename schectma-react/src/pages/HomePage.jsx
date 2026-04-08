@@ -7,7 +7,7 @@ export const HomePage = ({ setExerciseToEdit }) => {
     const navigate = useNavigate();
 
     const loadExercises = async () => {
-        const response = await fetch('/exercises');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/exercises`);
         const data = await response.json();
         setExercises(data);
     };
@@ -18,7 +18,7 @@ export const HomePage = ({ setExerciseToEdit }) => {
 
     const onDelete = async(_id)=>{
         const response = await fetch(
-            `/exercises/${_id}`,
+            `${import.meta.env.VITE_API_URL}/exercises/${_id}`,
             {method: 'DELETE'}
         );
         if (response.status == 204){
@@ -36,7 +36,7 @@ export const HomePage = ({ setExerciseToEdit }) => {
 
     return (
         <>
-            <h2>List of exercises</h2>
+            <h2>Exercise Logger</h2>
             <ExerciseCollection exercises={exercises} onDelete={onDelete} onEdit={onEdit}></ExerciseCollection>
             <Link to="/add-exercise">Add an exercise</Link>
         </>

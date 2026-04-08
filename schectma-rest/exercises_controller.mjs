@@ -2,12 +2,21 @@ import 'dotenv/config';
 import * as exercises from './exercises_model.mjs';
 import express from 'express';
 import asyncHandler from 'express-async-handler';
+import cors from 'cors';
 
 const PORT = process.env.PORT;
 
 const ERROR_NOT_FOUND = {Error: 'Not found'}
 
 const app = express();
+
+app.use(cors({
+    origin: [
+        'https://dazzling-freedom-production.up.railway.app'
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type']
+}));
 
 app.use(express.json());
 
@@ -21,8 +30,7 @@ app.listen(PORT, async ()=>{
 * Return true if the date format is MM-DD-YY where MM, DD and YY are 2 digit integers
 */
 function isDateValid(date) {
-    // Test using a regular expression. 
-    // To learn about regular expressions see Chapter 6 of the text book
+    // Test using a regular expression.
     const format = /^\d\d-\d\d-\d\d$/;
     return format.test(date);
 }

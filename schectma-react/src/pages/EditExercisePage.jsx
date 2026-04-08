@@ -14,7 +14,7 @@ export const EditExercisePage = ({exerciseToEdit}) => {
     const editExercise = async () => {
         const editedExercise = {name, reps, weight, unit, date};
         const response = await fetch(
-            `/exercises/${exerciseToEdit._id}`, {
+            `${import.meta.env.VITE_API_URL}/exercises/${exerciseToEdit._id}`, {
                 method: "PUT",
                 headers: {'Content-type':'application/json'},
                 body: JSON.stringify(editedExercise)
@@ -31,29 +31,31 @@ export const EditExercisePage = ({exerciseToEdit}) => {
     return (
         <div>
             <h1>Edit Exercise</h1>
-            <input
-                type="text"
-                value={name}
-                onChange={e => setName(e.target.value)} />
-            <input
-                type="number"
-                value={reps}
-                onChange={e => setReps(e.target.valueAsNumber)} />
-            <input
-                type="text"
-                value={weight}
-                onChange={e => setWeight(e.target.value)} />
-            <input
-                type="text"
-                value={unit}
-                onChange={e => setUnit(e.target.value)} />
-            <input
-                type="text"
-                value={date}
-                onChange={e => setDate(e.target.value)} />
-            <button
-                onClick={editExercise}
-            >Update</button>
+            <div className="exercise-form-stack">
+                <input
+                    type="text"
+                    value={name}
+                    onChange={e => setName(e.target.value)} />
+                <input
+                    type="number"
+                    value={reps}
+                    onChange={e => setReps(e.target.valueAsNumber)} />
+                <input
+                    type="text"
+                    value={weight}
+                    onChange={e => setWeight(e.target.value)} />
+                <input
+                    type="text"
+                    value={unit}
+                    onChange={e => setUnit(e.target.value)} />
+                <input
+                    type="text"
+                    value={date}
+                    onChange={e => setDate(e.target.value)} />
+                <button
+                    onClick={editExercise}
+                >Update</button>
+            </div>
         </div>
     );
 }
