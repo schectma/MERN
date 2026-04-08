@@ -13,15 +13,74 @@
 
 
 .collection-container {
-  border: 6px solid rgb(0, 255, 136);
-  padding: 32px;
+  width: min(92vw, 560px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .collection-item {
-  border: 2px solid rgb(202, 200, 89);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 0.9rem;
+  text-align: left;
+}
+
+.home-page {
+  width: min(92vw, 560px);
+  margin: 0 auto;
+}
+
+.home-title {
+  margin-bottom: 1rem;
+}
+
+.collection-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.collection-meta {
+  margin: 0 0 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.collection-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  padding: 0.45rem 0.75rem;
   border-radius: 8px;
-  width: 600px;
-  margin-top: 16px;
+  cursor: pointer;
+}
+
+.danger-btn {
+  border-color: rgba(255, 130, 130, 0.75);
+}
+
+.home-empty {
+  width: min(92vw, 560px);
+  margin: 0 auto 1rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.home-add-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  text-decoration: none;
 }
 
 a {
