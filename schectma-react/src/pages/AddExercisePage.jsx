@@ -46,34 +46,34 @@ export const AddExercisePage = () => {
     return (
         <div>
             <h1>Add Exercise</h1>
-            <input
-                type="text"
-                placeholder="Enter name here (e.g. Squat)"
-                value={name}
-                onChange={e => setName(e.target.value)} />
-            <input
-                type="number"
-                value={reps}
-                placeholder="Enter reps here (e.g. 10)"
-                onChange={e => setReps(e.target.value)} />
-            <input
-                type="number"
-                placeholder="Enter weight here (e.g. 100)"
-                value={weight}
-                onChange={e => setWeight(e.target.value)} />
-            <input
-                type="text"
-                placeholder="Enter unit here (lbs or kg)"
-                value={unit}
-                onChange={e => setUnit(e.target.value)} />
-            <input
-                type="text"
-                placeholder="Enter date here (MM-DD-YY)"
-                value={date}
-                onChange={e => setDate(e.target.value)} />
-            <button
-                onClick={addExercise}
-            >Add</button>
+            <div className="exercise-form-stack">
+                <input
+                    type="text"
+                    placeholder="Enter name here (e.g. Squat)"
+                    value={name}
+                    onChange={e => setName(e.target.value)} />
+                <input
+                    type="number"
+                    value={reps}
+                    placeholder="Enter reps here (e.g. 10)"
+                    onChange={e => setReps(e.target.value)} />
+                <input
+                    type="number"
+                    placeholder="Enter weight here (e.g. 100)"
+                    value={weight}
+                    onChange={e => setWeight(e.target.value)} />
+                <input
+                    type="text"
+                    placeholder="Enter unit here (lbs or kg)"
+                    value={unit}
+                    onChange={e => setUnit(e.target.value)} />
+                <input
+                    type="text"
+                    placeholder="Enter date here (MM-DD-YY)"
+                    value={date}
+                    onChange={e => setDate(e.target.value)} />
+                <button onClick={addExercise}>Add</button>
+            </div>
         </div>
     );
 }
