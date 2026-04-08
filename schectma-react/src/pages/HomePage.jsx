@@ -36,7 +36,7 @@ export const HomePage = ({ setExerciseToEdit }) => {
 
     return (
         <>
-            <h2>List of exercises</h2>
+            <h2>Exercise Logger</h2>
             <ExerciseCollection exercises={exercises} onDelete={onDelete} onEdit={onEdit}></ExerciseCollection>
             <Link to="/add-exercise">Add an exercise</Link>
         </>
