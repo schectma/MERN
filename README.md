@@ -27,7 +27,7 @@ flowchart LR
 
 ## How To Use
 
-Open the [deployed app](https://dazzling-freedom-production.up.railway.app/) in your browser. From the home page, you can use the corresponding buttons: 
+Open the [deployed app](https://cs290.up.railway.app/) in your browser. From the home page, you can use the corresponding buttons: 
 
 - **Add** and/or **Edit** exercises using the following fields:
     - Name (short label, e.g. `Squat`)
