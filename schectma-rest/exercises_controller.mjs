@@ -12,7 +12,7 @@ const app = express();
 
 app.use(cors({
     origin: [
-        'https://dazzling-freedom-production.up.railway.app'
+        'https://cs290.up.railway.app'
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type']
